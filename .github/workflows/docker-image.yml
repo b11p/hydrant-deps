@@ -25,5 +25,3 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/hydrant-deps
-        tag_with_ref: true
-    
