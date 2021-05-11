@@ -8,4 +8,4 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge sta
 sudo rm microsoft.gpg
 ## Install
 sudo apt update
-sudo apt install -y microsoft-edge-dev
+sudo apt install -y microsoft-edge-beta
