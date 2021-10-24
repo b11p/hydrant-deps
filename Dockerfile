@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/runtime:5.0-buster-slim
+FROM mcr.microsoft.com/dotnet/runtime:6.0-bullseye-slim
 COPY install_chrome.sh .
 RUN bash install_chrome.sh \
     && rm -rf /var/lib/apt/lists/* \
