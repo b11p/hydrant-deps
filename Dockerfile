@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/runtime:7.0-bullseye-slim
+FROM mcr.microsoft.com/dotnet/runtime:8.0-bookworm-slim
 COPY install_chrome.sh .
 RUN bash install_chrome.sh \
     && rm -rf /var/lib/apt/lists/* \
