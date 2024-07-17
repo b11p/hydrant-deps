@@ -1,4 +1,4 @@
-name: Checn New Version
+name: Check New Version
 
 on:
   schedule:
@@ -16,3 +16,5 @@ jobs:
       run: pip install PyGitHub
     - name: Check updates
       run: python update_xfs_deps.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
