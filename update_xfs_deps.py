@@ -1,8 +1,9 @@
+import json
 import os
-from github.ContentFile import ContentFile
+
 import requests
 from github import Github
-import json
+from github.ContentFile import ContentFile
 
 
 class HydrantDepsInfo:
@@ -40,13 +41,14 @@ newDeps = dict(EdgeETag=get_edge_etag(),
 repo = g.get_repo("b11p/hydrant-deps")
 content = repo.get_contents("deps-version")
 if not isinstance(content, ContentFile):
-    if content.count() > 0:
+    if len(content) > 0:
         content = content[0]
     else:
         content = None
 if isinstance(content, ContentFile):
     oldDeps = json.loads(content.decoded_content)
     if newDeps == oldDeps:
+        # todo, skip subsequent steps if no change.
         print("No change.")
         exit()
 
