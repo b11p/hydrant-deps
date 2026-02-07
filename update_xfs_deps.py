@@ -21,8 +21,9 @@ def get_edge_etag():
 
 def get_dotnet_dockerfile_hash():
     g = Github()
-    dockerfile = g.get_repo(
-        "dotnet/dotnet-docker").get_contents("src/runtime/8.0/bookworm-slim/amd64/Dockerfile")
+    dockerfile = g.get_repo("dotnet/dotnet-docker").get_contents(
+        "src/runtime/10.0/noble/amd64/Dockerfile"
+    )
     if not isinstance(dockerfile, ContentFile):
         dockerfile = dockerfile[0]
     print(dockerfile.sha)
